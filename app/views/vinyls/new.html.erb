@@ -1,0 +1,15 @@
+ <%= form_for @vinyl do |f| %>
+   <%= f.label :title %>
+   <%= f.text_field :title %>
+ 
+   <%= f.label :artist %>
+   <%= f.text_area :artist %>
+
+   <%= f.label :year %>
+   <%= f.text_area :year %>
+
+   <%= f.label :label %>
+   <%= f.text_area :label %>
+ 
+   <%= f.submit "Save" %>
+ <% end %>
