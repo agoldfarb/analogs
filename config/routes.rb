@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :vinyls do
-    resources :reviews, only: [:create]
+    resources :reviews
   end
   
   devise_for :users
