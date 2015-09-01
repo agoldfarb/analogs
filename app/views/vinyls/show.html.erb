@@ -1,5 +1,16 @@
+<div class="row">
 <h1><%= @vinyl.title %> </h1>
 <%= link_to "Edit", edit_vinyl_path(@vinyl), class: 'btn btn-success' %>
 <h2><%= @vinyl.artist %> </h2>
 <h2><%= @vinyl.year %> </h2>
 <h2><%= @vinyl.label %> </h2>
+</div>
+<br>
+
+<div class="row">
+  <h2>Review</h2>
+  <div class='col-md-12'>
+    <%= render @reviews %>
+    <%= render 'reviews/form', review: @review, vinly: @vinyl %>
+  </div>
+</div>

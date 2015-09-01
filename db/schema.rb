@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826200248) do
+ActiveRecord::Schema.define(version: 20150901183852) do
 
   create_table "reviews", force: :cascade do |t|
     t.text     "body"
     t.integer  "vinyl_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
   add_index "reviews", ["vinyl_id"], name: "index_reviews_on_vinyl_id"
 
   create_table "users", force: :cascade do |t|
@@ -40,10 +42,12 @@ ActiveRecord::Schema.define(version: 20150826200248) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "user_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["user_id"], name: "index_users_on_user_id"
 
   create_table "vinyls", force: :cascade do |t|
     t.string   "title"
@@ -52,6 +56,9 @@ ActiveRecord::Schema.define(version: 20150826200248) do
     t.string   "label"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "vinyls", ["user_id"], name: "index_vinyls_on_user_id"
 
 end

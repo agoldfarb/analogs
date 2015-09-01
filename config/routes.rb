@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :vinyls
+  resources :vinyls do
+    resources :reviews, only: [:create]
+  end
   
   devise_for :users
   get 'welcome/index'

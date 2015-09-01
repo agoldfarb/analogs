@@ -5,6 +5,8 @@ class VinylsController < ApplicationController
 
   def show
     @vinyl = Vinyl.find(params[:id])
+    @reviews = @vinyl.reviews
+    @review = @vinyl.reviews.build
   end
 
   def new
