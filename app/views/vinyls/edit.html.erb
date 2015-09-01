@@ -1,4 +1,4 @@
-<%= form_for @vinyl do |f| %>
+<%= form_for [current_user, @vinyl] do |f| %>
    <%= f.label :title %>
    <%= f.text_field :title %>
  
@@ -13,5 +13,3 @@
  
    <%= f.submit "Save" %>
  <% end %>
-
-<%= render 'reviews/form', review: @review, vinyl: @vinyl %>
