@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_vinyls = current_user.vinyls
+    @user_reviews = current_user.reviews
   end
 
   private

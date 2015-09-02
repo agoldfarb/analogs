@@ -6,6 +6,8 @@ class VinylsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @vinyl = @user.vinyls
+    @reviews = @vinyl.reviews
+    @review = @vinly.reviews.build
   end
 
   def new
@@ -26,8 +28,8 @@ class VinylsController < ApplicationController
   end
 
   def edit
-    @user = current_user
     @vinyl = Vinyl.find(params[:id])
+    @vinyl.save!
   end
 
   def update
