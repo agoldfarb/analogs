@@ -1,15 +1,15 @@
 <h1><%= @user.name %></h1>
- 
+
 <h2>My Collection</h2>
 <%= link_to "Add Record", new_user_vinyl_path(current_user.id), class: 'btn btn-success' %>
 <div>
-    <% @user_vinyls.each do |vinyl| %>
-        <h4><%= vinyl.title %></h4>
-        <%= link_to "Edit", edit_user_vinyl_path(current_user.id, vinyl.id), class: 'btn btn-success' %>
-        <%= vinyl.artist %> <br>
-        <%= vinyl.year %> <br>
-        <%= vinyl.label %> <br>
-    <% end %>
+  <% @user_vinyls.each do |vinyl| %>
+    <h4><%= vinyl.title %></h4>
+    <%= link_to "Show", user_vinyl_path(current_user.id, vinyl.id), class: 'btn btn-success' %>
+    <%= vinyl.artist %> <br>
+    <%= vinyl.year %> <br>
+    <%= vinyl.label %> <br>
+  <% end %>
 </div>
 
- 
+

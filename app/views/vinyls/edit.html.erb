@@ -1,7 +1,7 @@
 <%= form_for [current_user, @vinyl] do |f| %>
    <%= f.label :title %>
    <%= f.text_field :title %>
- 
+
    <%= f.label :artist %>
    <%= f.text_area :artist %>
 
@@ -10,9 +10,6 @@
 
    <%= f.label :label %>
    <%= f.text_area :label %>
- 
+
    <%= f.submit "Save" %>
  <% end %>
-
- <%= render 'reviews/form', review: @review, vinyl: @vinyl %>
-

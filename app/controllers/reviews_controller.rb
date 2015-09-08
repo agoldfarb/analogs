@@ -1,24 +1,18 @@
 class ReviewsController < ApplicationController
-  
+
   def show
     @vinyl = Vinyl.find(params[:vinyl_id])
     @reviews = @vinyl.reviews
   end
 
-  def new
-    @vinyl = Vinyl.find(params[:vinyl_id])
-    @review = current_user.reviews.new
-    @review.user_id = current_user.id
-  end
-
   def create
     @vinyl = Vinyl.find(params[:vinyl_id])
     @review = @vinyl.reviews.new(review_params)
-    @review.user_id = current_user.user_id
+    @review.user_id = current_user.id
     if @review.save
-      redirect_to @vinyl, notice: "Review saved"
+      redirect_to user_vinyl_path(current_user, @vinyl), notice: "Review saved"
     else
-      redirect_to @vinyl, notice: "Review failed to save. Try again"
+      redirect_to user_vinyl_path(current_user, @vinyl), notice: "Review failed to save. Try again"
     end
   end
 
@@ -33,7 +27,7 @@ class ReviewsController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @review = Review.find(params[:id])
     if @review.destroy

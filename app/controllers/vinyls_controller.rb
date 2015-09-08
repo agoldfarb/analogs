@@ -4,10 +4,9 @@ class VinylsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @vinyl = @user.vinyls
+    @vinyl = Vinyl.find(params[:id])
+    @review = current_user.reviews.new
     @reviews = @vinyl.reviews
-    @review = @vinly.reviews.build
   end
 
   def new
