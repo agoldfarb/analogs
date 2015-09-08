@@ -5,7 +5,7 @@ class VinylsController < ApplicationController
 
   def show
     @vinyl = Vinyl.find(params[:id])
-    @review = current_user.reviews.new
+    @review = Review.new
     @reviews = @vinyl.reviews
   end
 
