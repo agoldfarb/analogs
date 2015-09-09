@@ -1,23 +1,22 @@
-<div class="row">
-  <h1>Title:</h1>
-  <h3><%= @vinyl.title %> </h3>
-  <h1>Artist:</h1>
-  <h3><%= @vinyl.artist %> </h3>
-  <h1>Year:</h1>
-  <h3><%= @vinyl.year %> </h3>
-  <h1>Label:</h1>
-  <h3><%= @vinyl.label %> </h3>
+<div class="jumbotron">
+  <h1><%= @vinyl.title %> </h1>
+  <h1><%= @vinyl.artist %> </h1>
+  <h1><%= @vinyl.year %> </h1>
+  <h1><%= @vinyl.label %> </h1>
   <br>
-  <div class="row">
+  <br>
+  <br>
+  <div class="jumbotron">
     <% if @reviews.present? %>
-      <h1>Reviews</h1>
+      <h2>Reviews</h2>
       <div class='col-md-12'>
         <%= render @reviews %>
       </div>
     <% end %>
     <div class='col-md-12'>
-      <h2>Leave a review:</h2>
+      <h3>Leave a review:</h3>
       <%= render 'reviews/form', locals: {review: @review, vinyl: @vinyl} %>
     </div>
   </div>
 </div>
+</center>

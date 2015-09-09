@@ -1,6 +1,7 @@
-<h4>Add a review:</h4>
+<div>
 <%= form_for [current_user, @vinyl, @review] do |f| %>
   <%= f.label :body %>
   <%= f.text_field :body %>
   <%= f.submit %>
 <% end %>
+</div>

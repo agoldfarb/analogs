@@ -1,2 +1,42 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ h1, h2, h3, h4, h5, h6 {
+  font-family: "Apercu Bold", Calibri, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  background-color: white;
+  text-align: center;
+  color: blue;
+}
+p, div {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: blue;
+  text-align: center;
+  background-color: white;
+}
+
+a {
+  color: blue;
+}
+
+a:hover {
+  color: orange;
+}
+
+.jumbotron {
+  background-color: blue;
+}
+
+form {
+  display: inline-block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

@@ -9,15 +9,17 @@
 <body>
   <div class="container">
     <ul class="nav nav-tabs">
-      <li><%= link_to "ANALOGS", root_path %></li>
+      <li><h2><%= link_to "ANALOGS", root_path %></h2></li>
 
      <div class="pull-right user-info">
+     <h2>
           <% if current_user %>
-            Hello <%= current_user.name %>! <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %>
+            HELLO <%= link_to (current_user.name.upcase), current_user %>/<%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to "SIGN IN", new_user_session_path %> /
             <%= link_to "SIGN UP", new_user_registration_path %>
           <% end %>
+      </h2>
         </div>
       </ul>
 

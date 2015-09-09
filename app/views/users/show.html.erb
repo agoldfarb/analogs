@@ -1,15 +1,27 @@
-<h1><%= @user.name %></h1>
-
-<h2>My Collection</h2>
-<%= link_to "Add Record", new_user_vinyl_path(current_user.id), class: 'btn btn-success' %>
-<div>
+<div class = "jumbotron">
+  <div class = "container">
+    <center><h1><%= @user.name %></h1></center>
+    <center><h2>My Collection</h2></center>
+<div class= "row">
+  <div class = "col-md-4">
+<center><%= link_to "ADD RECORD", new_user_vinyl_path(current_user.id) %></center>
+</div>
+</div>
+<div class= "row">
+<div class= "col-md-4">
   <% @user_vinyls.each do |vinyl| %>
     <h4><%= vinyl.title %></h4>
-    <%= link_to "Show", user_vinyl_path(current_user.id, vinyl.id), class: 'btn btn-success' %>
+    <%= link_to "Show", user_vinyl_path(current_user.id, vinyl.id) %>
     <%= vinyl.artist %> <br>
     <%= vinyl.year %> <br>
     <%= vinyl.label %> <br>
   <% end %>
+  </div>
+  </div>
+  <br>
+  <br>
+  </div>
 </div>
+
 
 
